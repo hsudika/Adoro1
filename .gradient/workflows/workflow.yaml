@@ -43,7 +43,8 @@ jobs:
           instanceType: P4000
         EOF
         apt update > /dev/null
-        apt-get install -y jq
+        apt-get install -y 
+        lscpu
         gradient deployments create --name adoro-${RANDOM} --projectId ${PROJECT_ID} --spec ./deployment.yaml |awk '{print $3}'> ./deployment.id
 
         echo
